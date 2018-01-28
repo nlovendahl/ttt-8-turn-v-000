@@ -36,9 +36,10 @@ def turn(board)
   input = gets.strip
   index = input_to_index(input)
   if valid_move?(board, index) == false
-    puts "Sorry, that space is occupied. Please choose another."
+    puts "Sorry, that space is occupied or invalid. Please choose another."
     input = gets.strip
     index = input_to_index(input)
+    move(board, index, character = "X")
   else
     move(board, index, character = "X")
   end
